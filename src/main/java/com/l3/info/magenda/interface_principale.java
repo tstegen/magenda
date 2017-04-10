@@ -474,7 +474,7 @@ public class interface_principale extends javax.swing.JFrame {
 
     public void initialisationDesDonnees (){
         //File file = mediaManger.loadFile("database.csv");
-        File file = new File("database.csv");
+        File file = new File("src\\main\\java\\com\\l3\\info\\magenda\\data\\database.csv");
         if(file.exists()){
             base_de_donnees = new DaoExamenCsv(file);
             
