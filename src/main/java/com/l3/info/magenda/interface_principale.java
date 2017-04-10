@@ -59,7 +59,7 @@ public class interface_principale extends javax.swing.JFrame {
         basPan = new javax.swing.JPanel();
         paramsPan = new javax.swing.JPanel();
         hiddenPan = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        ferme_paramsPan = new javax.swing.JToggleButton();
         ajoutSuppPan = new javax.swing.JPanel();
         selectionPan = new javax.swing.JPanel();
         GradePan = new javax.swing.JPanel();
@@ -80,6 +80,11 @@ public class interface_principale extends javax.swing.JFrame {
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
         arrPlanSemPan = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        matierePan = new javax.swing.JPanel();
+        arrPlanMatPan = new javax.swing.JPanel();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         boutonPan = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -138,17 +143,31 @@ public class interface_principale extends javax.swing.JFrame {
         paramsPan.setLayout(new java.awt.BorderLayout());
 
         hiddenPan.setFocusCycleRoot(true);
-        hiddenPan.setPreferredSize(new java.awt.Dimension(15, 497));
-        hiddenPan.setLayout(new java.awt.GridLayout(1, 0));
+        hiddenPan.setMaximumSize(new java.awt.Dimension(30, 30));
+        hiddenPan.setPreferredSize(new java.awt.Dimension(15, 20));
 
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.setPreferredSize(new java.awt.Dimension(105, 20));
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        ferme_paramsPan.setBackground(new java.awt.Color(204, 204, 204));
+        ferme_paramsPan.setMinimumSize(new java.awt.Dimension(20, 12));
+        ferme_paramsPan.setPreferredSize(new java.awt.Dimension(20, 20));
+        ferme_paramsPan.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        ferme_paramsPan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                ferme_paramsPanActionPerformed(evt);
             }
         });
-        hiddenPan.add(jToggleButton1);
+
+        javax.swing.GroupLayout hiddenPanLayout = new javax.swing.GroupLayout(hiddenPan);
+        hiddenPan.setLayout(hiddenPanLayout);
+        hiddenPanLayout.setHorizontalGroup(
+            hiddenPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ferme_paramsPan, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        hiddenPanLayout.setVerticalGroup(
+            hiddenPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hiddenPanLayout.createSequentialGroup()
+                .addComponent(ferme_paramsPan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 455, Short.MAX_VALUE))
+        );
 
         paramsPan.add(hiddenPan, java.awt.BorderLayout.WEST);
 
@@ -199,7 +218,7 @@ public class interface_principale extends javax.swing.JFrame {
                 .addComponent(arrPlanFilPan1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         selectionPan.add(GradePan);
@@ -242,7 +261,7 @@ public class interface_principale extends javax.swing.JFrame {
                 .addComponent(arrPlanFilPan2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         selectionPan.add(filierePan);
@@ -280,11 +299,12 @@ public class interface_principale extends javax.swing.JFrame {
                 .addComponent(arrPlanFilPan, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         selectionPan.add(anneePan);
 
+        semainePan.setMaximumSize(new java.awt.Dimension(32767, 120));
         semainePan.setMinimumSize(new java.awt.Dimension(200, 110));
         semainePan.setOpaque(false);
         semainePan.setPreferredSize(new java.awt.Dimension(315, 120));
@@ -317,7 +337,7 @@ public class interface_principale extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addGap(0, 37, Short.MAX_VALUE))
             .addComponent(arrPlanSemPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         semainePanLayout.setVerticalGroup(
@@ -329,10 +349,44 @@ public class interface_principale extends javax.swing.JFrame {
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         selectionPan.add(semainePan);
+
+        matierePan.setMinimumSize(new java.awt.Dimension(200, 110));
+        matierePan.setOpaque(false);
+        matierePan.setPreferredSize(new java.awt.Dimension(220, 120));
+        matierePan.setLayout(new javax.swing.BoxLayout(matierePan, javax.swing.BoxLayout.Y_AXIS));
+
+        arrPlanMatPan.setMaximumSize(new java.awt.Dimension(32767, 20));
+        arrPlanMatPan.setMinimumSize(new java.awt.Dimension(87, 16));
+        arrPlanMatPan.setPreferredSize(new java.awt.Dimension(87, 25));
+        arrPlanMatPan.setLayout(new java.awt.GridLayout());
+
+        jCheckBox3.setText("Matière :");
+        jCheckBox3.setPreferredSize(new java.awt.Dimension(68, 20));
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+        arrPlanMatPan.add(jCheckBox3);
+
+        matierePan.add(arrPlanMatPan);
+
+        jList1.setModel(new javax.swing.AbstractListModel<Examen>() {
+            Examen[] strings;
+
+            public int getSize() { return strings.length; }
+
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        matierePan.add(jScrollPane1);
+
+        selectionPan.add(matierePan);
 
         ajoutSuppPan.add(selectionPan, java.awt.BorderLayout.CENTER);
 
@@ -875,7 +929,7 @@ public class interface_principale extends javax.swing.JFrame {
         new Interface_about(this,true).setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void ferme_paramsPanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ferme_paramsPanActionPerformed
         JToggleButton toggleButton = (JToggleButton) evt.getSource();
         
         if(toggleButton.isSelected()){
@@ -888,7 +942,7 @@ public class interface_principale extends javax.swing.JFrame {
             this.paramsPan.setPreferredSize(new Dimension(this.ajoutSuppPan.getWidth() + 20, this.ajoutSuppPan.getHeight()));
             this.paramsPan.revalidate();
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_ferme_paramsPanActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
@@ -914,6 +968,10 @@ public class interface_principale extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     /**
      * Open a popup that contains the error message passed
@@ -969,14 +1027,21 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel arrPlanFilPan;
     private javax.swing.JPanel arrPlanFilPan1;
     private javax.swing.JPanel arrPlanFilPan2;
+    private javax.swing.JPanel arrPlanMatPan;
     private javax.swing.JPanel arrPlanSemPan;
+    private javax.swing.JPanel arrPlanSemPan1;
+    private javax.swing.JPanel arrPlanSemPan2;
     private javax.swing.JMenuBar barre_de_menu;
     private javax.swing.JPanel basPan;
     private javax.swing.JPanel boutonPan;
+    private javax.swing.JToggleButton ferme_paramsPan;
     private javax.swing.JPanel filierePan;
     private javax.swing.JPanel hiddenPan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -987,6 +1052,7 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
@@ -995,10 +1061,11 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JPanel matierePan;
     private javax.swing.JMenuItem menuEnregistrer;
     private javax.swing.JMenuItem menuEnregistrerSous;
     private javax.swing.JMenuItem menuOuvrir;
@@ -1009,6 +1076,8 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel paramsPan;
     private javax.swing.JPanel selectionPan;
     private javax.swing.JPanel semainePan;
+    private javax.swing.JPanel semainePan1;
+    private javax.swing.JPanel semainePan2;
     // End of variables declaration//GEN-END:variables
     private com.l3.info.magenda.emplois_du_temps.EmploisDuTemps emploisDuTemps;
     private MyComboBoxModel jComboBoxModel;
