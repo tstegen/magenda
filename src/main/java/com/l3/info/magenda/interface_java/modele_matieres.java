@@ -44,9 +44,7 @@ public class modele_matieres extends AbstractTableModel {
     
     public void setListe(Vector<Examen> liste){
         this.liste.clear();
-        System.out.println("teste");
         for(Examen examen : liste) {
-            System.out.println(examen.description());
             this.add(examen);
         }
     }
