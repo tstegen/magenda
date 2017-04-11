@@ -362,7 +362,7 @@ public class interface_principale extends javax.swing.JFrame {
         arrPlanMatPan.setMaximumSize(new java.awt.Dimension(32767, 20));
         arrPlanMatPan.setMinimumSize(new java.awt.Dimension(87, 16));
         arrPlanMatPan.setPreferredSize(new java.awt.Dimension(87, 25));
-        arrPlanMatPan.setLayout(new java.awt.GridLayout());
+        arrPlanMatPan.setLayout(new java.awt.GridLayout(1, 0));
 
         jCheckBox3.setText("Matière :");
         jCheckBox3.setPreferredSize(new java.awt.Dimension(68, 20));
@@ -550,94 +550,54 @@ public class interface_principale extends javax.swing.JFrame {
         
          Vector<Examen> liste_des_examens = new Vector<>();
         
-        // Grade == tous
         if(((String) this.jComboBox2.getSelectedItem()).equalsIgnoreCase("tous")){
             if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){ 
-               if(!((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
+               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+                  liste_des_examens = this.base_de_donnees.findAll();   
+               }
+               else {
+                   liste_des_examens = this.base_de_donnees.findParParSemestreEtSemaine((String) this.jComboBox1.getSelectedItem(),
+                       Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
            }
            else{
                if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                   for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
+                   liste_des_examens = this.base_de_donnees.findByDiplomeAndWeek((String) this.jComboBox3.getSelectedItem(),
+                       Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));
                }
                else {
-                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            &&examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
+                   liste_des_examens = this.base_de_donnees.findParDiplomeParSemestreEtSemaine((String) this.jComboBox3.getSelectedItem(),(String) this.jComboBox1.getSelectedItem(),
+                       Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
            }   
         } // S'il n'est pas égale à tous
         else{
-           if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){ 
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
-               }
-               else {        
-                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
-               }
-           }
-           else{
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                   for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
+            if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){
+                if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+                    liste_des_examens = this.base_de_donnees.findByGrade(this.jComboBox2.getSelectedItem().toString());
                }
                else {
-                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            && examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
-                            && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
-                            liste_des_examens.add(examen);
-                        }
-                    }
+                    liste_des_examens = this.base_de_donnees.findParGradeParSemestre(this.jComboBox2.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString(),
+                            Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
-           }            
+            }
+            else{
+                if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeEtSemaine((String) this.jComboBox2.getSelectedItem(), (String) this.jComboBox3.getSelectedItem(),
+                        Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));
+                }
+                else {
+                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeParSemestreEtSemaine((String) this.jComboBox2.getSelectedItem(),(String) this.jComboBox3.getSelectedItem(),(String) this.jComboBox1.getSelectedItem(),
+                        Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
+                }
+            }            
         }
+        
         return liste_des_examens;
     }
     
     private void menu_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ajouterActionPerformed
         Vector<Examen> liste_des_examens = ajout_liste_matiere();
-       
-
         if(liste_des_examens != null){
             emploisDuTemps.addExamen(liste_des_examens);
         }
@@ -972,8 +932,8 @@ public class interface_principale extends javax.swing.JFrame {
                     jComboBox1.addItem(str);
                 }
             }
-            
-            this.model_table_matiere.setListe(ajout_liste_matiere());
+            Vector<Examen> liste_des_examens = ajout_liste_matiere();
+            this.model_table_matiere.setListe(liste_des_examens);
             
        }
     }//GEN-LAST:event_jComboBox3ItemStateChanged
@@ -1082,8 +1042,6 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel arrPlanFilPan2;
     private javax.swing.JPanel arrPlanMatPan;
     private javax.swing.JPanel arrPlanSemPan;
-    private javax.swing.JPanel arrPlanSemPan1;
-    private javax.swing.JPanel arrPlanSemPan2;
     private javax.swing.JMenuBar barre_de_menu;
     private javax.swing.JPanel basPan;
     private javax.swing.JPanel boutonPan;
@@ -1092,8 +1050,6 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel hiddenPan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -1130,8 +1086,6 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel paramsPan;
     private javax.swing.JPanel selectionPan;
     private javax.swing.JPanel semainePan;
-    private javax.swing.JPanel semainePan1;
-    private javax.swing.JPanel semainePan2;
     // End of variables declaration//GEN-END:variables
     private com.l3.info.magenda.emplois_du_temps.EmploisDuTemps emploisDuTemps;
     private MyComboBoxModel jComboBoxModel;

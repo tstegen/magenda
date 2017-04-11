@@ -12,6 +12,7 @@ import javax.swing.table.AbstractTableModel;
  * @author tstegen
  */
 public class modele_matieres extends AbstractTableModel {
+    String[] header = {"Intitule","Commenaire"};
     Vector<Examen> liste = new Vector();
     
     @Override
@@ -21,9 +22,14 @@ public class modele_matieres extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-       return 2;
+       return header.length;
     }
 
+    @Override
+    public String getColumnName(int column) {        
+        return header[column];    
+    }
+    
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Examen e = liste.get(rowIndex);
@@ -33,13 +39,21 @@ public class modele_matieres extends AbstractTableModel {
         if(columnIndex == 1){
             return e.getCommentaire();         
         }
-        
         return null;
     }
     
     public void setListe(Vector<Examen> liste){
-        this.liste = liste;
-        fireTableDataChanged();
+        this.liste.clear();
+        System.out.println("teste");
+        for(Examen examen : liste) {
+            System.out.println(examen.description());
+            this.add(examen);
+        }
     }
     
+    public void add(Examen examen){
+        int old_size = this.liste.size();
+        this.liste.add(examen);
+        fireTableRowsInserted(old_size, this.liste.size());
+    }
 }
