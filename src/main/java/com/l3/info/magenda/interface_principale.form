@@ -684,21 +684,22 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList1">
+                        <Component class="javax.swing.JTable" name="jTable1">
                           <Properties>
-                            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="new javax.swing.AbstractListModel&lt;Examen&gt;() {&#xa;    Examen[] strings;&#xa;&#xa;    &#xa;&#xa;    public int getSize() { return strings.length; }&#xa;&#xa;    public String getElementAt(int i) { return strings[i]; }&#xa;}" type="code"/>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="model_table_matiere" type="code"/>
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                            <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="com.l3.info.magenda.interface_java.modele_matieres model_table_matiere;"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="model_table_matiere = new com.l3.info.magenda.interface_java.modele_matieres();"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>

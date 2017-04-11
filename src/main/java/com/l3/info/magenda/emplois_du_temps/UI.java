@@ -1,7 +1,6 @@
 package com.l3.info.magenda.emplois_du_temps;
 
 import java.awt.FontMetrics;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -10,9 +9,6 @@ import java.awt.font.LineBreakMeasurer;
 import java.awt.font.TextAttribute;
 import java.awt.font.TextLayout;
 import java.text.AttributedString;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 
 public class UI {
