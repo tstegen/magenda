@@ -274,6 +274,11 @@ public class interface_principale extends javax.swing.JFrame {
         jComboBox1.setModel(jComboBoxModel3);
         jComboBox1.setMaximumSize(new java.awt.Dimension(40, 30));
         jComboBox1.setName("Tous");
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
 
         arrPlanFilPan.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -546,48 +551,48 @@ public class interface_principale extends javax.swing.JFrame {
 
     }
     
-    private Vector<Examen> ajout_liste_matiere(){
+    private Vector<Examen> ajout_liste_matiere(String grade, String diplome, String semestre){
         
          Vector<Examen> liste_des_examens = new Vector<>();
         
-        if(((String) this.jComboBox2.getSelectedItem()).equalsIgnoreCase("tous")){
-            if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){ 
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+        if(grade.equalsIgnoreCase("tous")){
+            if(diplome.equalsIgnoreCase("tous")){ 
+               if(semestre.equalsIgnoreCase("tous")){        
                   liste_des_examens = this.base_de_donnees.findAll();   
                }
                else {
-                   liste_des_examens = this.base_de_donnees.findParParSemestreEtSemaine((String) this.jComboBox1.getSelectedItem(),
+                   liste_des_examens = this.base_de_donnees.findParParSemestreEtSemaine(semestre,
                        Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
            }
            else{
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                   liste_des_examens = this.base_de_donnees.findByDiplomeAndWeek((String) this.jComboBox3.getSelectedItem(),
+               if(semestre.equalsIgnoreCase("tous")){        
+                   liste_des_examens = this.base_de_donnees.findByDiplomeAndWeek(diplome,
                        Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));
                }
                else {
-                   liste_des_examens = this.base_de_donnees.findParDiplomeParSemestreEtSemaine((String) this.jComboBox3.getSelectedItem(),(String) this.jComboBox1.getSelectedItem(),
+                   liste_des_examens = this.base_de_donnees.findParDiplomeParSemestreEtSemaine(diplome,semestre,
                        Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
            }   
         } // S'il n'est pas égale à tous
         else{
-            if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){
-                if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                    liste_des_examens = this.base_de_donnees.findByGrade(this.jComboBox2.getSelectedItem().toString());
+            if(diplome.equalsIgnoreCase("tous")){
+                if(semestre.equalsIgnoreCase("tous")){        
+                    liste_des_examens = this.base_de_donnees.findByGrade(grade);
                }
                else {
-                    liste_des_examens = this.base_de_donnees.findParGradeParSemestre(this.jComboBox2.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString(),
+                    liste_des_examens = this.base_de_donnees.findParGradeParSemestre(grade,semestre,
                             Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                }
             }
             else{
-                if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
-                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeEtSemaine((String) this.jComboBox2.getSelectedItem(), (String) this.jComboBox3.getSelectedItem(),
+                if(semestre.equalsIgnoreCase("tous")){        
+                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeEtSemaine(grade, diplome,
                         Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));
                 }
                 else {
-                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeParSemestreEtSemaine((String) this.jComboBox2.getSelectedItem(),(String) this.jComboBox3.getSelectedItem(),(String) this.jComboBox1.getSelectedItem(),
+                    liste_des_examens = this.base_de_donnees.findParGradeParDiplomeParSemestreEtSemaine(grade, diplome,semestre,
                         Integer.parseInt(jFormattedTextField1.getText()),Integer.parseInt(jFormattedTextField2.getText()));            
                 }
             }            
@@ -597,10 +602,13 @@ public class interface_principale extends javax.swing.JFrame {
     }
     
     private void menu_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ajouterActionPerformed
-        Vector<Examen> liste_des_examens = ajout_liste_matiere();
+        
+        Vector<Examen> liste_des_examens = ajout_liste_matiere(this.jComboBox2.getSelectedItem().toString(), this.jComboBox3.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString());
+        
         if(liste_des_examens != null){
             emploisDuTemps.addExamen(liste_des_examens);
         }
+        
     }//GEN-LAST:event_menu_ajouterActionPerformed
 
     private void menuOuvrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOuvrirActionPerformed
@@ -909,10 +917,7 @@ public class interface_principale extends javax.swing.JFrame {
                 for(String str : this.base_de_donnees.findDiplomeParGrade(item)){
                     jComboBox3.addItem(str);
                 }
-            }
-            
-            this.model_table_matiere.setListe(ajout_liste_matiere());
-            
+            }            
             
        }
     }//GEN-LAST:event_jComboBox2ItemStateChanged
@@ -932,8 +937,6 @@ public class interface_principale extends javax.swing.JFrame {
                     jComboBox1.addItem(str);
                 }
             }
-            Vector<Examen> liste_des_examens = ajout_liste_matiere();
-            this.model_table_matiere.setListe(liste_des_examens);
             
        }
     }//GEN-LAST:event_jComboBox3ItemStateChanged
@@ -985,6 +988,17 @@ public class interface_principale extends javax.swing.JFrame {
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+
+            Vector<Examen> liste_des_examens = ajout_liste_matiere(this.jComboBox2.getSelectedItem().toString(), 
+                this.jComboBox3.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString());
+            this.model_table_matiere.setListe(liste_des_examens);
+            
+       }
+
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     /**
      * Open a popup that contains the error message passed
