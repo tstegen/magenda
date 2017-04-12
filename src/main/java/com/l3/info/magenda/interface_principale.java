@@ -55,23 +55,23 @@ public class interface_principale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        affichagePan = new javax.swing.JPanel();
+        pannel_affichage = new javax.swing.JPanel();
         basPan = new javax.swing.JPanel();
         paramsPan = new javax.swing.JPanel();
-        hiddenPan = new javax.swing.JPanel();
+        panel_boutons_options = new javax.swing.JPanel();
         ferme_paramsPan = new javax.swing.JToggleButton();
         ajoutSuppPan = new javax.swing.JPanel();
         selectionPan = new javax.swing.JPanel();
         GradePan = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboBox_grade = new javax.swing.JComboBox<>();
         arrPlanFilPan1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         filierePan = new javax.swing.JPanel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        comboBox_filiere = new javax.swing.JComboBox<>();
         arrPlanFilPan2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         anneePan = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboBox_semestre = new javax.swing.JComboBox<>();
         arrPlanFilPan = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         semainePan = new javax.swing.JPanel();
@@ -82,9 +82,9 @@ public class interface_principale extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         matierePan = new javax.swing.JPanel();
         arrPlanMatPan = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        checkBox_matiere = new javax.swing.JCheckBox();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table_matiere = new javax.swing.JTable();
         boutonPan = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -112,14 +112,14 @@ public class interface_principale extends javax.swing.JFrame {
         setTitle("Magenda");
         setPreferredSize(new java.awt.Dimension(800, 700));
 
-        affichagePan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        affichagePan.setPreferredSize(new java.awt.Dimension(400, 274));
-        affichagePan.setLayout(new java.awt.BorderLayout());
+        pannel_affichage.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pannel_affichage.setPreferredSize(new java.awt.Dimension(400, 274));
+        pannel_affichage.setLayout(new java.awt.BorderLayout());
 
         emploisDuTemps = new com.l3.info.magenda.emplois_du_temps.EmploisDuTemps();
-        affichagePan.add(emploisDuTemps, java.awt.BorderLayout.CENTER);
+        pannel_affichage.add(emploisDuTemps, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(affichagePan, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pannel_affichage, java.awt.BorderLayout.CENTER);
 
         basPan.setMaximumSize(new java.awt.Dimension(32767, 100));
         basPan.setPreferredSize(new java.awt.Dimension(100, 30));
@@ -142,9 +142,9 @@ public class interface_principale extends javax.swing.JFrame {
         paramsPan.setPreferredSize(new java.awt.Dimension(240, 200));
         paramsPan.setLayout(new java.awt.BorderLayout());
 
-        hiddenPan.setFocusCycleRoot(true);
-        hiddenPan.setMaximumSize(new java.awt.Dimension(30, 30));
-        hiddenPan.setPreferredSize(new java.awt.Dimension(15, 20));
+        panel_boutons_options.setFocusCycleRoot(true);
+        panel_boutons_options.setMaximumSize(new java.awt.Dimension(30, 30));
+        panel_boutons_options.setPreferredSize(new java.awt.Dimension(15, 20));
 
         ferme_paramsPan.setBackground(new java.awt.Color(204, 204, 204));
         ferme_paramsPan.setMinimumSize(new java.awt.Dimension(20, 12));
@@ -156,20 +156,20 @@ public class interface_principale extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout hiddenPanLayout = new javax.swing.GroupLayout(hiddenPan);
-        hiddenPan.setLayout(hiddenPanLayout);
-        hiddenPanLayout.setHorizontalGroup(
-            hiddenPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panel_boutons_optionsLayout = new javax.swing.GroupLayout(panel_boutons_options);
+        panel_boutons_options.setLayout(panel_boutons_optionsLayout);
+        panel_boutons_optionsLayout.setHorizontalGroup(
+            panel_boutons_optionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ferme_paramsPan, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        hiddenPanLayout.setVerticalGroup(
-            hiddenPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hiddenPanLayout.createSequentialGroup()
+        panel_boutons_optionsLayout.setVerticalGroup(
+            panel_boutons_optionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_boutons_optionsLayout.createSequentialGroup()
                 .addComponent(ferme_paramsPan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 455, Short.MAX_VALUE))
         );
 
-        paramsPan.add(hiddenPan, java.awt.BorderLayout.WEST);
+        paramsPan.add(panel_boutons_options, java.awt.BorderLayout.WEST);
 
         ajoutSuppPan.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ajoutSuppPan.setPreferredSize(new java.awt.Dimension(240, 750));
@@ -185,12 +185,12 @@ public class interface_principale extends javax.swing.JFrame {
         GradePan.setPreferredSize(new java.awt.Dimension(200, 100));
 
         jComboBoxModel1 = new MyComboBoxModel();
-        jComboBox2.setModel(this.jComboBoxModel1);
-        jComboBox2.setMaximumSize(new java.awt.Dimension(40, 30));
-        jComboBox2.setName("Tous");
-        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+        comboBox_grade.setModel(this.jComboBoxModel1);
+        comboBox_grade.setMaximumSize(new java.awt.Dimension(40, 30));
+        comboBox_grade.setName("Tous");
+        comboBox_grade.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox2ItemStateChanged(evt);
+                comboBox_gradeItemStateChanged(evt);
             }
         });
 
@@ -209,7 +209,7 @@ public class interface_principale extends javax.swing.JFrame {
                     .addComponent(arrPlanFilPan1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(GradePanLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboBox_grade, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
         GradePanLayout.setVerticalGroup(
@@ -217,7 +217,7 @@ public class interface_principale extends javax.swing.JFrame {
             .addGroup(GradePanLayout.createSequentialGroup()
                 .addComponent(arrPlanFilPan1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBox_grade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -228,12 +228,12 @@ public class interface_principale extends javax.swing.JFrame {
         filierePan.setPreferredSize(new java.awt.Dimension(200, 100));
 
         jComboBoxModel = new MyComboBoxModel();
-        jComboBox3.setModel(this.jComboBoxModel);
-        jComboBox3.setMaximumSize(new java.awt.Dimension(40, 30));
-        jComboBox3.setName("Tous");
-        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+        comboBox_filiere.setModel(this.jComboBoxModel);
+        comboBox_filiere.setMaximumSize(new java.awt.Dimension(40, 30));
+        comboBox_filiere.setName("Tous");
+        comboBox_filiere.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox3ItemStateChanged(evt);
+                comboBox_filiereItemStateChanged(evt);
             }
         });
 
@@ -252,7 +252,7 @@ public class interface_principale extends javax.swing.JFrame {
                     .addComponent(arrPlanFilPan2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(filierePanLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboBox_filiere, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
         filierePanLayout.setVerticalGroup(
@@ -260,7 +260,7 @@ public class interface_principale extends javax.swing.JFrame {
             .addGroup(filierePanLayout.createSequentialGroup()
                 .addComponent(arrPlanFilPan2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBox_filiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -271,12 +271,12 @@ public class interface_principale extends javax.swing.JFrame {
         anneePan.setPreferredSize(new java.awt.Dimension(200, 100));
 
         jComboBoxModel3 = new MyComboBoxModel();
-        jComboBox1.setModel(jComboBoxModel3);
-        jComboBox1.setMaximumSize(new java.awt.Dimension(40, 30));
-        jComboBox1.setName("Tous");
-        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+        comboBox_semestre.setModel(jComboBoxModel3);
+        comboBox_semestre.setMaximumSize(new java.awt.Dimension(40, 30));
+        comboBox_semestre.setName("Tous");
+        comboBox_semestre.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1ItemStateChanged(evt);
+                comboBox_semestreItemStateChanged(evt);
             }
         });
 
@@ -295,7 +295,7 @@ public class interface_principale extends javax.swing.JFrame {
                     .addComponent(arrPlanFilPan, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(anneePanLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboBox_semestre, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
         anneePanLayout.setVerticalGroup(
@@ -303,7 +303,7 @@ public class interface_principale extends javax.swing.JFrame {
             .addGroup(anneePanLayout.createSequentialGroup()
                 .addComponent(arrPlanFilPan, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBox_semestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -369,20 +369,20 @@ public class interface_principale extends javax.swing.JFrame {
         arrPlanMatPan.setPreferredSize(new java.awt.Dimension(87, 25));
         arrPlanMatPan.setLayout(new java.awt.GridLayout(1, 0));
 
-        jCheckBox3.setText("Matière :");
-        jCheckBox3.setPreferredSize(new java.awt.Dimension(68, 20));
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        checkBox_matiere.setText("Matière :");
+        checkBox_matiere.setPreferredSize(new java.awt.Dimension(68, 20));
+        checkBox_matiere.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                checkBox_matiereActionPerformed(evt);
             }
         });
-        arrPlanMatPan.add(jCheckBox3);
+        arrPlanMatPan.add(checkBox_matiere);
 
         matierePan.add(arrPlanMatPan);
 
-        model_table_matiere = new com.l3.info.magenda.interface_java.modele_matieres();
-        jTable1.setModel(model_table_matiere);
-        jScrollPane2.setViewportView(jTable1);
+        model_table_matiere = new com.l3.info.magenda.interface_java.Modele_matieres();
+        table_matiere.setModel(model_table_matiere);
+        jScrollPane2.setViewportView(table_matiere);
 
         matierePan.add(jScrollPane2);
 
@@ -535,7 +535,7 @@ public class interface_principale extends javax.swing.JFrame {
             base_de_donnees = new DaoExamenCsv(file);
             
             for(String str : this.base_de_donnees.findGrade()){
-                    jComboBox2.addItem(str);
+                    comboBox_grade.addItem(str);
             }
             
             Vector<String> listes_des_filieres = base_de_donnees.findDiplome();
@@ -545,7 +545,7 @@ public class interface_principale extends javax.swing.JFrame {
             } 
             
             for(String str : this.base_de_donnees.findAnnee()){
-                    jComboBox1.addItem(str);
+                    comboBox_semestre.addItem(str);
             }
         }
 
@@ -602,9 +602,14 @@ public class interface_principale extends javax.swing.JFrame {
     }
     
     private void menu_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ajouterActionPerformed
-        
-        Vector<Examen> liste_des_examens = ajout_liste_matiere(this.jComboBox2.getSelectedItem().toString(), this.jComboBox3.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString());
-        
+        Vector<Examen> liste_des_examens = new Vector<>();
+        if(checkBox_matiere.isSelected()){
+            liste_des_examens = model_table_matiere.getItem(this.table_matiere.getSelectedRows());
+        }
+        else {
+            liste_des_examens = ajout_liste_matiere(this.comboBox_grade.getSelectedItem().toString(), this.comboBox_filiere.getSelectedItem().toString(),this.comboBox_semestre.getSelectedItem().toString());
+        }
+      
         if(liste_des_examens != null){
             emploisDuTemps.addExamen(liste_des_examens);
         }
@@ -761,11 +766,11 @@ public class interface_principale extends javax.swing.JFrame {
         Vector<Examen> liste_des_examens = new Vector<>();
         
         // Grade == tous
-        if(((String) this.jComboBox2.getSelectedItem()).equalsIgnoreCase("tous")){
-            if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){ 
-               if(!((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+        if(((String) this.comboBox_grade.getSelectedItem()).equalsIgnoreCase("tous")){
+            if(((String) this.comboBox_filiere.getSelectedItem()).equalsIgnoreCase("tous")){ 
+               if(!((String) this.comboBox_semestre.getSelectedItem()).equalsIgnoreCase("tous")){        
                     for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
+                        if(!(examen.getSemestre() == Integer.parseInt(comboBox_semestre.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -774,9 +779,9 @@ public class interface_principale extends javax.swing.JFrame {
                }
            }
            else{
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+               if(((String) this.comboBox_semestre.getSelectedItem()).equalsIgnoreCase("tous")){        
                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
+                        if(!(examen.getDiplome().equalsIgnoreCase(comboBox_filiere.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -785,8 +790,8 @@ public class interface_principale extends javax.swing.JFrame {
                }
                else {
                     for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            &&examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
+                        if(!(examen.getDiplome().equalsIgnoreCase(comboBox_filiere.getSelectedItem().toString())
+                            &&examen.getSemestre() == Integer.parseInt(comboBox_semestre.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -796,10 +801,10 @@ public class interface_principale extends javax.swing.JFrame {
            }   
         } // S'il n'est pas égale à tous
         else{
-           if(((String) this.jComboBox3.getSelectedItem()).equalsIgnoreCase("tous")){ 
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+           if(((String) this.comboBox_filiere.getSelectedItem()).equalsIgnoreCase("tous")){ 
+               if(((String) this.comboBox_semestre.getSelectedItem()).equalsIgnoreCase("tous")){        
                     for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
+                        if(!(examen.getGrade().equalsIgnoreCase(comboBox_grade.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -808,8 +813,8 @@ public class interface_principale extends javax.swing.JFrame {
                }
                else {        
                     for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
+                        if(!(examen.getGrade().equalsIgnoreCase(comboBox_grade.getSelectedItem().toString())
+                            && examen.getSemestre() == Integer.parseInt(comboBox_semestre.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -818,10 +823,10 @@ public class interface_principale extends javax.swing.JFrame {
                }
            }
            else{
-               if(((String) this.jComboBox1.getSelectedItem()).equalsIgnoreCase("tous")){        
+               if(((String) this.comboBox_semestre.getSelectedItem()).equalsIgnoreCase("tous")){        
                    for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
+                        if(!(examen.getGrade().equalsIgnoreCase(comboBox_grade.getSelectedItem().toString())
+                            && examen.getDiplome().equalsIgnoreCase(comboBox_filiere.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -830,9 +835,9 @@ public class interface_principale extends javax.swing.JFrame {
                }
                else {
                     for(Examen examen : this.emploisDuTemps.getDonneesAffichees()){
-                        if(!(examen.getGrade().equalsIgnoreCase(jComboBox2.getSelectedItem().toString())
-                            && examen.getDiplome().equalsIgnoreCase(jComboBox3.getSelectedItem().toString())
-                            && examen.getSemestre() == Integer.parseInt(jComboBox1.getSelectedItem().toString())
+                        if(!(examen.getGrade().equalsIgnoreCase(comboBox_grade.getSelectedItem().toString())
+                            && examen.getDiplome().equalsIgnoreCase(comboBox_filiere.getSelectedItem().toString())
+                            && examen.getSemestre() == Integer.parseInt(comboBox_semestre.getSelectedItem().toString())
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) >= Integer.parseInt(jFormattedTextField1.getText()) 
                             && examen.getDeb().get(Calendar.WEEK_OF_YEAR) <= Integer.parseInt(jFormattedTextField2.getText()))){
                             liste_des_examens.add(examen);
@@ -899,47 +904,47 @@ public class interface_principale extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+    private void comboBox_gradeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBox_gradeItemStateChanged
         
         
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             
             String item = (String) evt.getItem();
-            jComboBox3.removeAllItems();
-            jComboBox3.addItem("Tous");
+            comboBox_filiere.removeAllItems();
+            comboBox_filiere.addItem("Tous");
             
             if(item.equalsIgnoreCase("tous")){
                 for(String str : this.base_de_donnees.findDiplome()){
-                    jComboBox3.addItem(str);
+                    comboBox_filiere.addItem(str);
                 }
             }
             else{
                 for(String str : this.base_de_donnees.findDiplomeParGrade(item)){
-                    jComboBox3.addItem(str);
+                    comboBox_filiere.addItem(str);
                 }
             }            
             
        }
-    }//GEN-LAST:event_jComboBox2ItemStateChanged
+    }//GEN-LAST:event_comboBox_gradeItemStateChanged
 
-    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+    private void comboBox_filiereItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBox_filiereItemStateChanged
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             String item = (String) evt.getItem();
-            jComboBox1.removeAllItems();
-            jComboBox1.addItem("Tous");
+            comboBox_semestre.removeAllItems();
+            comboBox_semestre.addItem("Tous");
             if(item.equalsIgnoreCase("tous")){
                 for(String str : this.base_de_donnees.findAnnee()){
-                    jComboBox1.addItem(str);
+                    comboBox_semestre.addItem(str);
                 }
             }
             else{
                 for(String str : this.base_de_donnees.findAnneeParMatiere(item)){
-                    jComboBox1.addItem(str);
+                    comboBox_semestre.addItem(str);
                 }
             }
             
        }
-    }//GEN-LAST:event_jComboBox3ItemStateChanged
+    }//GEN-LAST:event_comboBox_filiereItemStateChanged
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         new Interface_about(this,true).setVisible(true);
@@ -985,20 +990,20 @@ public class interface_principale extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void checkBox_matiereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_matiereActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_checkBox_matiereActionPerformed
 
-    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+    private void comboBox_semestreItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBox_semestreItemStateChanged
         if (evt.getStateChange() == ItemEvent.SELECTED) {
 
-            Vector<Examen> liste_des_examens = ajout_liste_matiere(this.jComboBox2.getSelectedItem().toString(), 
-                this.jComboBox3.getSelectedItem().toString(),this.jComboBox1.getSelectedItem().toString());
+            Vector<Examen> liste_des_examens = ajout_liste_matiere(this.comboBox_grade.getSelectedItem().toString(), 
+                this.comboBox_filiere.getSelectedItem().toString(),this.comboBox_semestre.getSelectedItem().toString());
             this.model_table_matiere.setListe(liste_des_examens);
             
        }
 
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
+    }//GEN-LAST:event_comboBox_semestreItemStateChanged
 
     /**
      * Open a popup that contains the error message passed
@@ -1048,7 +1053,6 @@ public class interface_principale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel GradePan;
-    private javax.swing.JPanel affichagePan;
     private javax.swing.JPanel ajoutSuppPan;
     private javax.swing.JPanel anneePan;
     private javax.swing.JPanel arrPlanFilPan;
@@ -1059,15 +1063,14 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JMenuBar barre_de_menu;
     private javax.swing.JPanel basPan;
     private javax.swing.JPanel boutonPan;
+    private javax.swing.JCheckBox checkBox_matiere;
+    private javax.swing.JComboBox<String> comboBox_filiere;
+    private javax.swing.JComboBox<String> comboBox_grade;
+    private javax.swing.JComboBox<String> comboBox_semestre;
     private javax.swing.JToggleButton ferme_paramsPan;
     private javax.swing.JPanel filierePan;
-    private javax.swing.JPanel hiddenPan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel3;
@@ -1087,8 +1090,6 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JTable jTable1;
-    com.l3.info.magenda.interface_java.modele_matieres model_table_matiere;
     private javax.swing.JPanel matierePan;
     private javax.swing.JMenuItem menuEnregistrer;
     private javax.swing.JMenuItem menuEnregistrerSous;
@@ -1097,9 +1098,13 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JMenu menu_aide;
     private javax.swing.JMenu menu_fichier;
     private javax.swing.JMenuItem menu_rafraichir;
+    private javax.swing.JPanel panel_boutons_options;
+    private javax.swing.JPanel pannel_affichage;
     private javax.swing.JPanel paramsPan;
     private javax.swing.JPanel selectionPan;
     private javax.swing.JPanel semainePan;
+    private javax.swing.JTable table_matiere;
+    com.l3.info.magenda.interface_java.Modele_matieres model_table_matiere;
     // End of variables declaration//GEN-END:variables
     private com.l3.info.magenda.emplois_du_temps.EmploisDuTemps emploisDuTemps;
     private MyComboBoxModel jComboBoxModel;
