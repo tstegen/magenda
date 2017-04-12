@@ -13,8 +13,9 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Vector;
 import com.l3.info.magenda.dao.Examen;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -43,9 +44,10 @@ public class Jour {
     
     private Map<String,Categorie> cat;
     
-    public Jour(int num_jour) {
+    public Jour(int num_jour, Map<String,Categorie> cat) {
         String[] tab_jour = {"Lundi","Mardi","Mercredi", "Jeudi", "Vendredi", "Samedi","Dimanche"};
         this.nom_jour = tab_jour[num_jour];
+        this.cat = cat;
         initComponents();
     }
     
@@ -173,7 +175,7 @@ public class Jour {
     
     public BufferedImage createImage() {
         int w = LARGEUR_CELLULE * (HALF_HOUR_OF_DAY+1);
-        int h = HAUTEUR_CELLULE * (getNbrLigne() + 1);
+        int h = 20 + HAUTEUR_CELLULE * getNbrLigne();
         BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = bi.createGraphics();
         
@@ -239,5 +241,5 @@ public class Jour {
             g2d.setColor(Color.black);
         }
     }
-
+    
 }

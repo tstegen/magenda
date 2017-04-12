@@ -41,7 +41,7 @@ public class Semaine extends JPanel {
         this.num_semaine = num_semaine;
         this.img = new BufferedImage(842, 595, BufferedImage.TYPE_INT_RGB);
         super.setBackground(new java.awt.Color(245,245,245));
-        for(int i=0; i<NB_DAY; i++) days_of_week[i] = new Jour(i);    
+        for(int i=0; i<NB_DAY; i++) days_of_week[i] = new Jour(i, cat);    
     }
         
     public Boolean addExamen (Examen examen) {
