@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 package com.l3.info.magenda.interface_java;
+
 import com.l3.info.magenda.dao.Examen;
 import java.util.Vector;
-import javax.swing.table.AbstractTableModel;
+
 /**
  *
  * @author tstegen
  */
-public class modele_matieres extends AbstractTableModel {
+public class TableModelMatieres extends javax.swing.table.AbstractTableModel {
     String[] header = {"Intitule","Commenaire"};
     Vector<Examen> liste = new Vector();
     
@@ -47,6 +48,17 @@ public class modele_matieres extends AbstractTableModel {
         for(Examen examen : liste) {
             this.add(examen);
         }
+    }
+    
+    /**
+     * Recupere les examens selectionnés
+     * @param index_selectionnes Tableau des index à récupérer
+     * @return Vecteur contenant les examens voulus
+     */
+    public Vector<Examen> RecupererExamenSelectionner(int[] index_selectionnes){
+        Vector<Examen> examens_selectionnes = new Vector<>();
+        for(int index : index_selectionnes) examens_selectionnes.add(this.liste.get(index));
+        return examens_selectionnes;
     }
     
     public void add(Examen examen){

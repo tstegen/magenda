@@ -707,8 +707,8 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="com.l3.info.magenda.interface_java.Modele_matieres model_table_matiere;"/>
-                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="model_table_matiere = new com.l3.info.magenda.interface_java.Modele_matieres();"/>
+                            <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="com.l3.info.magenda.interface_java.TableModelMatieres model_table_matiere;"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="model_table_matiere = new com.l3.info.magenda.interface_java.TableModelMatieres();"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>

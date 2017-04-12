@@ -380,7 +380,7 @@ public class interface_principale extends javax.swing.JFrame {
 
         matierePan.add(arrPlanMatPan);
 
-        model_table_matiere = new com.l3.info.magenda.interface_java.Modele_matieres();
+        model_table_matiere = new com.l3.info.magenda.interface_java.TableModelMatieres();
         table_matiere.setModel(model_table_matiere);
         jScrollPane2.setViewportView(table_matiere);
 
@@ -604,7 +604,7 @@ public class interface_principale extends javax.swing.JFrame {
     private void menu_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ajouterActionPerformed
         Vector<Examen> liste_des_examens = new Vector<>();
         if(checkBox_matiere.isSelected()){
-            liste_des_examens = model_table_matiere.getItem(this.table_matiere.getSelectedRows());
+            liste_des_examens = model_table_matiere.RecupererExamenSelectionner(this.table_matiere.getSelectedRows());
         }
         else {
             liste_des_examens = ajout_liste_matiere(this.comboBox_grade.getSelectedItem().toString(), this.comboBox_filiere.getSelectedItem().toString(),this.comboBox_semestre.getSelectedItem().toString());
@@ -1104,7 +1104,7 @@ public class interface_principale extends javax.swing.JFrame {
     private javax.swing.JPanel selectionPan;
     private javax.swing.JPanel semainePan;
     private javax.swing.JTable table_matiere;
-    com.l3.info.magenda.interface_java.Modele_matieres model_table_matiere;
+    com.l3.info.magenda.interface_java.TableModelMatieres model_table_matiere;
     // End of variables declaration//GEN-END:variables
     private com.l3.info.magenda.emplois_du_temps.EmploisDuTemps emploisDuTemps;
     private MyComboBoxModel jComboBoxModel;
