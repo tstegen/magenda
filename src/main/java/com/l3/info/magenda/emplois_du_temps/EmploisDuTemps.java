@@ -5,6 +5,7 @@
  */
 package com.l3.info.magenda.emplois_du_temps;
 
+import com.itextpdf.kernel.geom.Rectangle;
 import java.awt.Graphics;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -22,7 +23,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import org.apache.commons.collections4.map.HashedMap;
 import com.l3.info.magenda.dao.Examen;
+import java.awt.Component;
 import java.io.File;
+import javax.swing.text.Document;
 
 /**
  *
@@ -132,16 +135,59 @@ public class EmploisDuTemps extends JTabbedPane implements Printable, Serializab
         fileOut.close(); 
 
     }
-
+    
     public void writeInPdf (String path) throws FileNotFoundException {
+        
         File file = new File(path);
+        file.getParentFile().mkdirs();
+        //new FullDottedLine().manipulatePdf(path);
+       
+        com.itextpdf.kernel.pdf.PdfDocument pdfDoc = new com.itextpdf.kernel.pdf.PdfDocument(new com.itextpdf.kernel.pdf.PdfWriter(path));
+        
+        // Taille feuille A4 mode paysage (842, 595)
+        com.itextpdf.kernel.geom.PageSize pageSize = new com.itextpdf.kernel.geom.PageSize(842, 595);
+        pdfDoc.setDefaultPageSize(pageSize);
+        
+        java.awt.Dimension taille_totale_semaine = getSemaine(48).getSize();
+        int hauteur_panel_semaine = getSemaine(48).getSize().height;
+        int largeur_panel_semaine = getSemaine(48).getSize().width;
+        
+        double nbPages = Math.floor((hauteur_panel_semaine / pageSize.getHeight()))+1;
+        System.out.println("taille sem 48 : " + taille_totale_semaine);
+        System.out.println("Hauteur sem 48 : " + hauteur_panel_semaine);
+        System.out.println("Largeur sem 48 : " + largeur_panel_semaine);
+        System.out.println("nombre de pages : " + nbPages);
+        com.itextpdf.kernel.pdf.canvas.PdfCanvas canvas;
+        
+        // Création des pages
+        for(int i=0; i < nbPages; i++){
+            canvas = new com.itextpdf.kernel.pdf.canvas.PdfCanvas(pdfDoc.addNewPage());
+            Component[] comp = getSemaine(48).getComponents();
+           
+            /*for (float x = 0; x < pageSize.getWidth(); ) {
+                for (float y = 0; y < pageSize.getHeight(); ) {
+                    canvas.circle(x, y, 1f);
+                    y += 72f;
+                }
+                x += 72f;
+            }*/
+            
+            
+            canvas.fill();
+        }
+        pdfDoc.close();
+    
+        
+        
+        
+ /*        File file = new File(path);
         file.getParentFile().mkdirs();
         //Initialize PDF writer
         com.itextpdf.kernel.pdf.PdfWriter writer = new com.itextpdf.kernel.pdf.PdfWriter(path);
         //Initialize PDF document
         com.itextpdf.kernel.pdf.PdfDocument pdf = new com.itextpdf.kernel.pdf.PdfDocument(writer);
         com.itextpdf.kernel.pdf.PdfPage page = pdf.addNewPage();
- 
+
         com.itextpdf.kernel.pdf.PdfArray lineEndings = new com.itextpdf.kernel.pdf.PdfArray();
         lineEndings.add(new com.itextpdf.kernel.pdf.PdfName("Diamond"));
         lineEndings.add(new com.itextpdf.kernel.pdf.PdfName("Diamond"));
@@ -156,10 +202,10 @@ public class EmploisDuTemps extends JTabbedPane implements Printable, Serializab
                 .setContents("The example of line annotation")
                 .setColor(com.itextpdf.kernel.color.Color.BLUE);
         page.addAnnotation(annotation);
- 
+
         //Close document
         pdf.close();
-
+ */
     }
         
     @Override
